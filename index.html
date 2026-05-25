@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Volt Motos — Produtos</title>
+  <!-- CSS EXTERNO -->
+  <link rel="stylesheet" href="src/css/estilo.css" />
+
+  <!-- Basic Icons -->
+  <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
+  <!-- Filled Icons -->
+  <link href="https://cdn.boxicons.com/3.0.8/fonts/filled/boxicons-filled.min.css" rel="stylesheet">
+  <!-- Brand Icons -->
+  <link href="https://cdn.boxicons.com/3.0.8/fonts/brands/boxicons-brands.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a class="logo" href="/index.html">Volt <span>Motos</span></a>
+      <ul>
+        <li><a href="/index.html" class="ativo"><i class="bx bx-shopping-bag"></i> Produtos</a></li>
+        <li><a href="/src/pages/loja.html"><i class="bx bx-cart"></i> Carrinho</a></li>
+        <li><a href="/src/pages/sobre.html"><i class="bx-globe-alt-2"></i> Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-badge">⚡ 100% Elétrico</div>
+      <h1>As melhores motos <em>com os melhores preços</em></h1>
+      <p>Cada moto foi escolhida pela qualidade e segurança dos nossos clientes.</p>
+      <div class="hero-btns">
+        <a href="#grade-produtos" class="btn-hero-primario">Ver produtos</a>
+        <a href="/src/pages/sobre.html" class="btn-hero-secundario">Saiba mais</a>
+      </div>
+    </section>
+
+    <!-- VANTAGENS -->
+    <section class="vantagens" aria-label="Vantagens">
+      <div class="vantagem-item">
+        <span class="vantagem-icone">🚚</span>
+        <div>
+          <strong>Frete grátis</strong>
+          <p>Em todo o Brasil</p>
+        </div>
+      </div>
+      <div class="vantagem-item">
+        <span class="vantagem-icone">🔋</span>
+        <div>
+          <strong>Bateria garantida</strong>
+          <p>2 anos de garantia</p>
+        </div>
+      </div>
+      <div class="vantagem-item">
+        <span class="vantagem-icone">💳</span>
+        <div>
+          <strong>Parcele em até 24x</strong>
+          <p>Sem juros no cartão</p>
+        </div>
+      </div>
+      <div class="vantagem-item">
+        <span class="vantagem-icone">🛡️</span>
+        <div>
+          <strong>Compra segura</strong>
+          <p>Garantia de devolução</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUSCA E FILTRO -->
+    <div class="barra-filtros">
+      <div class="campo-busca">
+        <i class="bx bx-search"></i>
+        <input
+          type="text"
+          id="campo-busca"
+          placeholder="Buscar modelo..."
+          aria-label="Buscar produto"
+          oninput="filtrarProdutos()"
+        />
+      </div>
+      <div class="filtros-preco">
+        <span class="filtro-label">Ordenar por:</span>
+        <select id="select-ordem" onchange="filtrarProdutos()" aria-label="Ordenar produtos">
+          <option value="padrao">Padrão</option>
+          <option value="menor">Menor preço</option>
+          <option value="maior">Maior preço</option>
+        </select>
+      </div>
+    </div>
+
+    <h2 class="section-titulo">Motos em destaque</h2>
+
+    <!-- Os cards são inseridos aqui via JavaScript/DOM -->
+    <section id="grade-produtos" aria-label="Grade de produtos"></section>
+
+    <p id="sem-resultados" class="sem-resultados" style="display:none;">
+      Nenhuma moto encontrada para "<span id="termo-buscado"></span>".
+    </p>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+      <div class="newsletter-conteudo">
+        <div>
+          <h3>Fique por dentro das novidades ⚡</h3>
+          <p>Receba ofertas exclusivas e lançamentos em primeira mão.</p>
+        </div>
+        <form class="newsletter-form" onsubmit="assinarNewsletter(event)">
+          <input type="email" placeholder="seu@email.com" required aria-label="E-mail para newsletter" />
+          <button type="submit">Assinar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/index.html">Produtos</a>
+      <a href="/src/pages/loja.html">Carrinho</a>
+      <a href="/src/pages/sobre.html">Sobre</a>
+    </div>
+    <p>© 2025 <span>Volt Motos</span> — Feito com cuidado e código limpo.</p>
+  </footer>
+
+  <!-- JS EXTERNO -->
+  <script src="src/js/script.js"></script>
+</body>
+</html>
